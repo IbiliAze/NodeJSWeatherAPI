@@ -1,10 +1,6 @@
 pipeline {
   agent any
 
-  triggers {
-    cron('H/15 * * * *') #H-hash, min, hour, month, dow
-  }
-
   stages {
 
     stage('Echo') {
@@ -18,7 +14,7 @@ pipeline {
 
     stage('Pull') {
       steps {
-        git 'https://github.com/IbiliAze/Jenkins.git'
+        git 'https://github.com/IbiliAze/NodeJSWeatherAPI'
       }
     }
 
@@ -27,11 +23,6 @@ pipeline {
         sh '''npm init
         npm install
         node src/app.js
-      }
-    }
-    stage('Post') {
-      steps {
-        archiveArtifacts artifacts: 'output.txt', followSymlinks: false
       }
     }
   }
