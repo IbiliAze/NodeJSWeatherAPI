@@ -20,8 +20,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh '''npm init
-        npm install
+        sh '''npm install
         node src/app.js '''
       }
     }
