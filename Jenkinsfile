@@ -9,7 +9,7 @@ pipeline {
 
     stage('Echo') {
       steps {
-        echo 'hello'
+        echo 'hello1'
         sh '''pwd
         ls -a
         echo $USER'''
