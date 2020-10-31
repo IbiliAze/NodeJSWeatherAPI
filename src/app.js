@@ -5,7 +5,7 @@ const weather = require('./utils/callback');
 
 const server = express();
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 const static_path = path.join(__dirname, './public');
 
 
